@@ -28,7 +28,7 @@ def process_image_to_verilog_format(image_path):
             b_5bit = (b >> 3)
 
             color_str = f"16'b{r_5bit:05b}{g_6bit:06b}{b_5bit:05b}"
-            # 将像素索引添加到对应的颜色组
+            # map color to pixel_index
             if color_str not in color_to_pixels:
                 color_to_pixels[color_str] = []
             color_to_pixels[color_str].append(pixel_index)
@@ -117,7 +117,7 @@ if __name__ == "__main__":
         
         print(f"\nresult saved to output_verilog.txt")
         
-        # 验证总像素数
+        # Show image info
         img = Image.open(image_path)
         width, height = img.size
         total_pixels = width * height
@@ -131,4 +131,5 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print(f"Error: unable to locate path: {image_path}")
     except Exception as e:
+
         print(f"Error processing image: {e}")
