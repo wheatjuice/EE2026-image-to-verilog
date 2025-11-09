@@ -102,7 +102,7 @@ def process_image_detailed_info(image_path):
 
 if __name__ == "__main__":
 
-    image_path = "D:\_codecode\ppppppp\EE2026_FDP_project\keyboard1_final_version.png" # Insert image path here
+    image_path = "D:\example\example.png" # Insert image path here
     
     try:
         print("processing image...")
@@ -111,7 +111,7 @@ if __name__ == "__main__":
         print("\n" + "="*80 + "\n")
         print('Verilog code generated:\n')
         print(result)
-        output_path = r"D:\_codecode\ppppppp\EE2026_FDP_project\output_verilog.txt"
+        output_path = r"D:\example\output_verilog.txt"   # output txt path here
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(result)
         
@@ -133,3 +133,4 @@ if __name__ == "__main__":
     except Exception as e:
 
         print(f"Error processing image: {e}")
+
